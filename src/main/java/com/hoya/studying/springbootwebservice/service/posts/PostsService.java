@@ -2,12 +2,16 @@ package com.hoya.studying.springbootwebservice.service.posts;
 
 import com.hoya.studying.springbootwebservice.domain.posts.Posts;
 import com.hoya.studying.springbootwebservice.domain.posts.PostsRepository;
+import com.hoya.studying.springbootwebservice.web.dto.PostsListsResponseDto;
 import com.hoya.studying.springbootwebservice.web.dto.PostsResponseDto;
 import com.hoya.studying.springbootwebservice.web.dto.PostsSaveRequestDto;
 import com.hoya.studying.springbootwebservice.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -36,5 +40,18 @@ public class PostsService {
     public PostsResponseDto findById(Long id) {
         Posts entity = findByOne(id);
         return new PostsResponseDto(entity);
+    }
+
+    @Transactional(readOnly = true)
+    public List<PostsListsResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListsResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = findByOne(id);
+        postsRepository.delete(posts);
     }
 }

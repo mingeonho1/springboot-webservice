@@ -1,0 +1,60 @@
+{{>layout/header}}
+
+<style>
+    /* 제목 스타일링 */
+    h1 {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid #00b333;
+        margin-bottom: 30px;
+    }
+
+    /* 폼 스타일링 */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    #btn-save {
+        background-color: #00b333;
+        border-color: #f8f9fa;
+        margin-left: 10px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+
+    /* 중앙 배치 */
+    .centered-col {
+        display: flex;
+        justify-content: center;
+    }
+
+</style>
+
+<h1>게시글 등록</h1>
+
+<div class="col-md-12 centered-col">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="author">작성자</label>
+                <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요">
+            </div>
+            <div class="form-group">
+                <label for="content">내용</label>
+                <textarea class="form-control" id="content" rows="5" placeholder="내용을 입력하세요"></textarea>
+            </div>
+        </form>
+        <div class="text-right"> <!-- 버튼들을 오른쪽에 정렬하기 위해 추가 -->
+            <a href="/" role="button" class="btn btn-secondary">취소</a>
+            <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+        </div>
+    </div>
+</div>
+
+{{>layout/footer}}

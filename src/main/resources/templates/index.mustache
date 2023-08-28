@@ -1,10 +1,73 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>스프링 부트 웹서비스</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-</head>
-<body>
-<h1>스프링 부트로 시작하는 웹 서비스</h1>
-</body>
-</html>
+{{>layout/header}}
+
+<style>
+    /* 제목 스타일링 */
+    h1 {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid #00b333;
+        margin-bottom: 20px;
+    }
+
+    /* 글 등록 버튼 스타일링 */
+    .btn-primary {
+        display: block;
+        background-color: #00b333;
+        border-color: #f8f9fa;
+        width: 150px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+        background-color: #0e8a00;
+        border-color: #0e8a00;
+    }
+
+    /* 테이블 스타일링 */
+    .table {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .thead-strong th {
+        background-color: #00b333;
+        color: white;
+    }
+
+    #tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+</style>
+
+<h1>판다 게시판🐼</h1>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+        </div>
+    </div>
+</div>
+<br>
+<!-- 목록 출력 영역 -->
+<table class="table table-horizontal table-bordered">
+    <thead class="thead-strong">
+    <tr>
+        <th>게시글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>최종수정일</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+    {{#posts}}
+        <tr>
+            <td>{{id}}</td>
+            <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+            <td>{{author}}</td>
+            <td>{{modifiedDate}}</td>
+        </tr>
+    {{/posts}}
+    </tbody>
+</table>
+
+{{>layout/footer}}
