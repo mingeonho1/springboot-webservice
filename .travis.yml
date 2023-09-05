@@ -6,7 +6,6 @@ branches:
   only:
     - master
 
-
 # Travis CI 서버의 Home
 cache:
   directories:
@@ -19,4 +18,4 @@ script: "./gradlew clean build"
 notifications:
   email:
     recipients:
-      - "als77770@naver.com"
+      - als77770@naver.com
