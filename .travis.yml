@@ -34,8 +34,8 @@ deploy:
     wait-until-deployed: true
 
   - provider: codedeploy
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: $C_AWS_ACCESS_KEY
+    secret_access_key: $C_AWS_SECRET_KEY
     bucket: hoya-springboot-build
     key: springboot-webservice.zip
     bundle_type: zip
