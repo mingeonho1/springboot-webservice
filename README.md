@@ -15,4 +15,4 @@
 <img width="600" alt="스크린샷 2023-09-08 092100" src="https://github.com/mingeonho1/springboot-webservice/assets/102270909/938edc64-c28d-4ad4-9d36-756edd62bb9a">
 
 ### 메인 페이지 UI
-<img width="639" alt="스크린샷 2023-09-08 174238" src="https://github.com/mingeonho1/springboot-webservice/assets/102270909/a5a066ec-b239-40f5-b490-214eb2f03d11">
+![main](https://github.com/mingeonho1/springboot-webservice/assets/102270909/6df22214-5b17-4543-ad24-566847c26e59)
